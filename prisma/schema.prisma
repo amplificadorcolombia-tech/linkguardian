@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  plan      String   @default("free")
+  createdAt DateTime @default(now())
+
+  domains        Domain[]
+  scans          Scan[]
+  subscriptions  Subscription[]
+}
+
+model Domain {
+  id        String   @id @default(uuid())
+  domain    String
+  userId    String
+  createdAt DateTime @default(now())
+
+  user  User @relation(fields: [userId], references: [id])
+  scans Scan[]
+}
+
+model Scan {
+  id           String   @id @default(uuid())
+  domainId     String
+  userId       String
+
+  status       String
+  pagesLimit   Int
+  pagesScanned Int      @default(0)
+  brokenCount  Int      @default(0)
+
+  createdAt DateTime @default(now())
+
+  domain Domain @relation(fields: [domainId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+
+  links Link[]
+}
+
+model Link {
+  id         String  @id @default(uuid())
+  scanId     String
+
+  url        String
+  sourcePage String?
+  status     Int
+
+  scan Scan @relation(fields: [scanId], references: [id])
+}
+
+model Subscription {
+  id        String   @id @default(uuid())
+  userId    String
+  stripeId  String
+  plan      String
+  status    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}

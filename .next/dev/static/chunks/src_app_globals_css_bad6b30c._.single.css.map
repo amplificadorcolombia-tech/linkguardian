@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/globals.css"],"sourcesContent":["* {\r\n  box-sizing: border-box;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\nhtml,\r\nbody {\r\n  max-width: 100vw;\r\n  overflow-x: hidden;\r\n  font-family: system-ui, -apple-system, sans-serif;\r\n  background: #0b0f19;\r\n  color: #ffffff;\r\n}\r\n\r\na {\r\n  color: inherit;\r\n  text-decoration: none;\r\n}\r\n\r\nbutton {\r\n  cursor: pointer;\r\n}\r\n\r\ninput {\r\n  outline: none;\r\n}"],"names":[],"mappings":"AAAA;;;;;;AAMA;;;;;;;;AASA;;;;;AAKA;;;;AAIA"}}]
+}

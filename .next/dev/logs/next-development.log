@@ -1,0 +1,52 @@
+[00:00:01.443] Server  LOG     ✓ Ready in 900ms
+[00:00:04.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.664] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="inter_5972bc34-module__OU16Qa__className"
+-                           data-new-gr-c-s-check-loaded="14.1277.0"
+-                           data-gr-ext-installed=""
+                          >
+                  ...
+
+[00:00:35.274] Server  LOG     prisma:query "SELECT \"public\".\"User\".\"id\", \"public\".\"User\".\"email\", \"public\".\"User\".\"name\", \"public\".\"User\".\"plan\", \"public\".\"User\".\"createdAt\" FROM \"public\".\"User\" WHERE (\"public\".\"User\".\"id\" = $1 AND 1=1) LIMIT $2 OFFSET $3"
+[00:00:35.284] Server  LOG     prisma:query "INSERT INTO \"public\".\"Domain\" (\"id\",\"domain\",\"userId\",\"createdAt\") VALUES ($1,$2,$3,$4) RETURNING \"public\".\"Domain\".\"id\", \"public\".\"Domain\".\"domain\", \"public\".\"Domain\".\"userId\", \"public\".\"Domain\".\"createdAt\""
+[00:00:35.291] Server  LOG     prisma:query "INSERT INTO \"public\".\"Scan\" (\"id\",\"domainId\",\"userId\",\"status\",\"pagesLimit\",\"pagesScanned\",\"brokenCount\",\"createdAt\") VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING \"public\".\"Scan\".\"id\", \"public\".\"Scan\".\"domainId\", \"public\".\"Scan\".\"userId\", \"public\".\"Scan\".\"status\", \"public\".\"Scan\".\"pagesLimit\", \"public\".\"Scan\".\"pagesScanned\", \"public\".\"Scan\".\"brokenCount\", \"public\".\"Scan\".\"createdAt\""
+[00:01:46.420] Server  LOG     prisma:query "SELECT 1"
+[00:01:46.421] Server  LOG     prisma:query "SELECT \"public\".\"User\".\"id\", \"public\".\"User\".\"email\", \"public\".\"User\".\"name\", \"public\".\"User\".\"plan\", \"public\".\"User\".\"createdAt\" FROM \"public\".\"User\" WHERE (\"public\".\"User\".\"id\" = $1 AND 1=1) LIMIT $2 OFFSET $3"
+[00:01:46.428] Server  LOG     prisma:query "INSERT INTO \"public\".\"Domain\" (\"id\",\"domain\",\"userId\",\"createdAt\") VALUES ($1,$2,$3,$4) RETURNING \"public\".\"Domain\".\"id\", \"public\".\"Domain\".\"domain\", \"public\".\"Domain\".\"userId\", \"public\".\"Domain\".\"createdAt\""
+[00:01:46.432] Server  LOG     prisma:query "INSERT INTO \"public\".\"Scan\" (\"id\",\"domainId\",\"userId\",\"status\",\"pagesLimit\",\"pagesScanned\",\"brokenCount\",\"createdAt\") VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING \"public\".\"Scan\".\"id\", \"public\".\"Scan\".\"domainId\", \"public\".\"Scan\".\"userId\", \"public\".\"Scan\".\"status\", \"public\".\"Scan\".\"pagesLimit\", \"public\".\"Scan\".\"pagesScanned\", \"public\".\"Scan\".\"brokenCount\", \"public\".\"Scan\".\"createdAt\""
+[00:01:46.449] Server  ERROR   TypeError: fetch failed
+[00:01:48.884] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:58.852] Server  LOG     prisma:query "SELECT \"public\".\"User\".\"id\", \"public\".\"User\".\"email\", \"public\".\"User\".\"name\", \"public\".\"User\".\"plan\", \"public\".\"User\".\"createdAt\" FROM \"public\".\"User\" WHERE (\"public\".\"User\".\"id\" = $1 AND 1=1) LIMIT $2 OFFSET $3"
+[00:01:58.857] Server  LOG     prisma:query "INSERT INTO \"public\".\"Domain\" (\"id\",\"domain\",\"userId\",\"createdAt\") VALUES ($1,$2,$3,$4) RETURNING \"public\".\"Domain\".\"id\", \"public\".\"Domain\".\"domain\", \"public\".\"Domain\".\"userId\", \"public\".\"Domain\".\"createdAt\""
+[00:01:58.862] Server  LOG     prisma:query "INSERT INTO \"public\".\"Scan\" (\"id\",\"domainId\",\"userId\",\"status\",\"pagesLimit\",\"pagesScanned\",\"brokenCount\",\"createdAt\") VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING \"public\".\"Scan\".\"id\", \"public\".\"Scan\".\"domainId\", \"public\".\"Scan\".\"userId\", \"public\".\"Scan\".\"status\", \"public\".\"Scan\".\"pagesLimit\", \"public\".\"Scan\".\"pagesScanned\", \"public\".\"Scan\".\"brokenCount\", \"public\".\"Scan\".\"createdAt\""
+[00:01:58.874] Server  ERROR   TypeError: fetch failed
+[01:39:58.058] Server  LOG       Reload env: .env
